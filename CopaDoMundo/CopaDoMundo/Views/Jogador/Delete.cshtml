@@ -1,0 +1,56 @@
+﻿@model CopaDoMundo.Models.Jogador
+
+@{
+    ViewBag.Title = "Excluindo";
+}
+
+<h2>Excluindo um Jogador</h2>
+
+<h3>Você tem certeza que deseja excluir esse Jogador?</h3>
+<fieldset>
+    <legend>Jogador</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Posicao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Posicao)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Nascimento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nascimento)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Altura)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Altura)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.SelecaoId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SelecaoId)
+    </div>
+
+</fieldset>
+
+@using (Html.BeginForm())
+{
+    <p>
+        <input type="submit" value="Excluir"/> |
+        @Html.ActionLink("Listagem de Jogadores", "Index")
+    </p>
+}

@@ -1,0 +1,34 @@
+﻿@model CopaDoMundo.Models.Selecao
+@{
+    ViewBag.Title = "Excluindo";
+}
+
+<h2>Excluindo Seleção</h2>
+
+<h3>Você tem certeza que deseja excluir essa seleção?</h3>
+<fieldset>
+    <legend>Selecao</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Pais)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Pais)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Tecnico)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tecnico)
+    </div>
+
+</fieldset>
+
+@using (Html.BeginForm())
+{
+    <p>
+        <input type="submit" value="Excluir"/> | 
+        @Html.ActionLink("Listagem de Seleções", "Index")
+    </p>
+}

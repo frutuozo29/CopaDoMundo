@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css", "~/Content/Site.css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <!--<p class="site-title">
+                    <img class="logo" src="~/Images/Copa-do-Mundo1.png" alt="Brasil Logo" />
+                </p>-->
+            </div>
+            <div class="float-right">
+                <nav>
+                    <ul id="menu">
+                        <li>@Html.ActionLink("Seleções", "Index", "Selecao", null, new { @class = "botao" })</li>
+                        <li>@Html.ActionLink("Jogadores", "Index", "Jogador", null, new { @class = "botao" })</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clearfix">
+            @RenderBody()
+        </section>
+    </div>
+
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year - Copa do Mundo</p>
+            </div>
+            <div class="float-right">
+                <ul id="social">
+                    <li><a href="http://facebook.com/renan.meneses.37" class="facebook">Facebook - Renan Frutuozo</a></li>
+                    <li><a href="http://renanfrutuozo.com.br" class="site">Site - Renan Frutuozo</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
