@@ -9,30 +9,32 @@
 <p>
     @Html.ActionLink("Incluir Seleção", "Create")
 </p>
-
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Pais)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tecnico)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+<fieldset>
+    <table>
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pais)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tecnico)
-            </td>
-            <td>
-                @Html.ActionLink("Remover", "Delete", new { id = item.Id})
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.Pais)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tecnico)
+            </th>
+            <th></th>
         </tr>
-    }
-</table>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pais)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tecnico)
+                </td>
+                <td>
+                    @Html.ActionLink("Remover", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </table>
+
+</fieldset>
